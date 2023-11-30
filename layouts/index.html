@@ -1,0 +1,18 @@
+{{ partial "head" . }}
+
+<body class="wrap">
+  <div class="container mt-4">
+    <div class="row">
+      <h1>Wyll</h1>
+      <h2 class="mb-4">Nos cartes de visite</h1>
+
+      {{ range ( where .Site.RegularPages "Type" "wyllers") }}
+      <div class="col-12 col-md-3">
+        {{ partial "post_summary" . }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+  {{ partial "footer" . }}
+</body>
+</html>

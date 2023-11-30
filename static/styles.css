@@ -1,0 +1,39 @@
+html, body
+{
+  background-color: #e8eaee;
+  min-height: 100%;
+}
+
+.highlight pre
+{
+  padding: 10px;
+}
+
+.footer
+{
+  background-color: #132651;
+  margin-top: auto;
+}
+
+.card-title a
+{
+  text-decoration: none;
+  color: #132651;
+}
+
+.qrcode img {
+  width: 110px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.qrcode {
+  width: 120px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stack {
+  font-size: 30px;
+}

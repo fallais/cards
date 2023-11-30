@@ -1,0 +1,11 @@
+<div class="card mb-4">
+    <div class="card-body text-center">
+        <img class="rounded-circle img-fluid" width="130" src="/images/wyllers/{{ .Params.photo }}" alt="Photo de {{ .Title }}"/>
+        <h5 class="card-title text-center mt-2"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h5>
+        <h6 class="card-subtitle mb-2 text-center text-muted">{{ .Params.job }}</h6>
+        {{ range .Params.tags }}
+        <span class="badge badge-primary post_tag">{{ . }}</span>
+        {{ end }}
+        <a href="{{ .RelPermalink }}" class="btn btn-success mt-4 float-right">Voir la carte de visite</a>
+    </div>
+</div>

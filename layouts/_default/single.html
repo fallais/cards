@@ -1,0 +1,72 @@
+{{ partial "head" . }}
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col col-lg-6 offset-lg-3 text-center mt-4">
+        <img class="rounded-circle img-fluid mx-auto d-block" width="130" src="/images/wyllers/{{ .Params.photo }}" alt="Photo de {{ .Title }}"/>
+        <h1 class="text-center mt-3">{{ .Title }}</h1>
+        <h2 class="text-muted text-center mb-3">{{ .Params.job }}</h6>
+        
+        {{ range .Params.tags }}
+        <span class="badge bg-light text-dark post_tag">{{ . }}</span>
+        {{ end }}
+      
+        <div class="mt-4 mb-4"></div>
+
+        <span class="fa-stack fa-lg text-primary stack" onclick="">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+        </span>
+
+        <span class="fa-stack fa-lg text-primary stack">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-comments fa-stack-1x fa-inverse"></i>
+        </span>
+
+        <span class="fa-stack fa-lg text-primary stack" onclick="copyToClipboard({{ .Params.phone }})">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-phone fa-stack-1x fa-inverse"></i>
+        </span>
+
+        <br />
+
+        <span class="fa-stack fa-lg stack">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-globe fa-stack-1x fa-inverse"></i>
+        </span>
+
+        <span class="fa-stack fa-lg stack">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-map-marker fa-stack-1x fa-inverse"></i>
+        </span>
+
+        <span class="fa-stack fa-lg stack">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+        </span>
+
+        <h3 class="mt-3"><b>Scannez</b> ce QRCode</b></h3>
+        <div class="qrcode text-center">
+          <div style="display: flex; justify-content: center; text-align: center;" id="qrcode"></div>
+        </div>
+        
+
+        <h3 class="mt-3">Quelques mots sur <b>moi</b></h3>
+        <div class="mt-4">
+          {{ .Content }}
+        </div>
+
+        <h3>Quelques mots sur Wyll</h3>
+        <div class="mt-4">
+          {{ partial "wyll" . }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-none">
+    <div class="linkedin">{{ .Params.linkedin }}</div>
+  </div>
+  {{ partial "script" . }}
+</body>
+</html>
