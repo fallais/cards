@@ -14,7 +14,7 @@ uglyurls = true
 [[deployment.targets]]
 name = "io.wyll.cards"
 URL = "s3://io.wyll.cards?region=eu-west-3"
-cloudFrontDistributionID = "EP96Y0H6JFISB"
+cloudFrontDistributionID = "E3B3YUHMG02BPY"
 
 [[deployment.matchers]]
 pattern = "^.+\\.(js|css|svg|ttf)$"
