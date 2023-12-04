@@ -5,61 +5,72 @@
     <div class="row">
       <div class="col col-lg-6 offset-lg-3 text-center mt-4">
         <img class="rounded-circle img-fluid mx-auto d-block" width="130" src="/images/wyllers/{{ .Params.photo }}" alt="Photo de {{ .Title }}"/>
-        <h1 class="text-center mt-3">{{ .Title }}</h1>
+        <h1 class="text-center mt-3 text-primary">{{ .Title }}</h1>
         <h2 class="text-muted text-center mb-3">{{ .Params.job }}</h6>
         
         {{ range .Params.tags }}
         <span class="badge bg-light text-dark post_tag">{{ . }}</span>
         {{ end }}
       
-        <div class="mt-4 mb-4"></div>
+        <h3 class="mt-4">Pour me <b class="contact text-info">contacter</b></h3>
 
-        <span class="fa-stack fa-lg text-primary stack" onclick="">
-          <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
-        </span>
+        <a href="mailto:{{ .Params.email }}" class="social-link">
+          <span class="fa-stack fa-lg text-primary stack">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
 
-        <span class="fa-stack fa-lg text-primary stack">
-          <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-comments fa-stack-1x fa-inverse"></i>
-        </span>
+        <a href="sms://{{ .Params.phone }}" class="social-link">
+          <span class="fa-stack fa-lg text-primary stack">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-comments fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
 
-        <span class="fa-stack fa-lg text-primary stack" onclick="copyToClipboard({{ .Params.phone }})">
-          <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-phone fa-stack-1x fa-inverse"></i>
-        </span>
+        <a href="tel://{{ .Params.phone }}" class="social-link">
+          <span class="fa-stack fa-lg text-primary stack">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-phone fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
 
         <br />
 
-        <span class="fa-stack fa-lg stack">
-          <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-globe fa-stack-1x fa-inverse"></i>
-        </span>
+        <a href="https://wyll.io" target="_blank" class="social-link">
+          <span class="fa-stack fa-lg text-primary stack" class="social-link">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-globe fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
 
-        <span class="fa-stack fa-lg stack">
-          <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-map-marker fa-stack-1x fa-inverse"></i>
-        </span>
+        <a href="https://www.google.com/maps/dir//2 chemin de tréville 31270 Frouzins , FR" target="_blank" class="social-link">
+          <span class="fa-stack fa-lg text-primary stack">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-map-marker fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
 
-        <span class="fa-stack fa-lg stack">
-          <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-        </span>
+        <a href="{{ .Params.linkedin }}" target="_blank" class="social-link">
+          <span class="fa-stack fa-lg text-primary stack" class="social-link">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+
+        <h3 class="mt-4">Quelques mots sur <b class="text-info">moi</b></h3>
+        <div class="mt-3">
+          {{ .Content }}
+        </div>
+
+        <h3>Quelques mots sur <b class="text-info">Wyll</b></h3>
+        <div class="mt-3">
+          {{ partial "wyll" . }}
+        </div>
 
         <h3 class="mt-3"><b>Scannez</b> ce QRCode</b></h3>
         <div class="qrcode text-center">
           <div style="display: flex; justify-content: center; text-align: center;" id="qrcode"></div>
-        </div>
-        
-
-        <h3 class="mt-3">Quelques mots sur <b>moi</b></h3>
-        <div class="mt-4">
-          {{ .Content }}
-        </div>
-
-        <h3>Quelques mots sur Wyll</h3>
-        <div class="mt-4">
-          {{ partial "wyll" . }}
         </div>
       </div>
     </div>

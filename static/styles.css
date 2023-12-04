@@ -1,18 +1,21 @@
 html, body
 {
-  background-color: #e8eaee;
+  background-color: #eef1f5;
   min-height: 100%;
 }
 
-.highlight pre
-{
-  padding: 10px;
+a.social-link {
+  text-decoration: none;
 }
 
-.footer
-{
-  background-color: #132651;
-  margin-top: auto;
+.text-primary {
+  color: #132651 !important;
+}
+.text-muted {
+  color: #437F97 !important;
+}
+.text-info {
+  color: #691E06 !important;
 }
 
 .card-title a
