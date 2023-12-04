@@ -1,7 +1,6 @@
-baseurl = "https://blog.wyll.io"
+baseurl = "https://cards.wyll.io"
 languageCode = "fr"
-title = "Wyll.io | Blog"
-disqusShortname = "blogwyllio"
+title = "Wyll.io | Cards"
 googleAnalytics = "blogwyllio"
 uglyurls = true
 
@@ -13,8 +12,8 @@ uglyurls = true
 [deployment]
 
 [[deployment.targets]]
-name = "io.wyll.blog"
-URL = "s3://io.wyll.blog?region=eu-west-3"
+name = "io.wyll.cards"
+URL = "s3://io.wyll.cards?region=eu-west-3"
 cloudFrontDistributionID = "EP96Y0H6JFISB"
 
 [[deployment.matchers]]
