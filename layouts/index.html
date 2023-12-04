@@ -8,7 +8,7 @@
 
       {{ range ( where .Site.RegularPages "Type" "wyllers") }}
       <div class="col-12 col-md-3">
-        {{ partial "post_summary" . }}
+        {{ partial "wyller" . }}
       </div>
       {{ end }}
     </div>
