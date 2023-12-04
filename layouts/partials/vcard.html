@@ -1,0 +1,11 @@
+<script type="text/javascript">
+    function vcard(){
+        console.log("generating the vcard")
+        var fooBar = vCard.create(vCard.Version.FOUR)
+        fooBar.addFormattedname("Mr Foo Bar")
+        fooBar.addEmail("foor@bar.com", vCard.Type.HOME)
+        fooBar.addAddress("street", "code", "city", "country", vCard.Type.HOME)
+
+        vCard.export(fooBar, "Foo Bar", true) // use parameter true to force download
+    }
+</script>

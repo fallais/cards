@@ -17,6 +17,10 @@ a.social-link {
 .text-info {
   color: #691E06 !important;
 }
+.btn-primary {
+  background-color: #132651 !important;
+  border-color: #132651 !important;
+}
 
 .card-title a
 {

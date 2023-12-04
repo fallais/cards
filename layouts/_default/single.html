@@ -11,6 +11,8 @@
         {{ range .Params.tags }}
         <span class="badge bg-light text-dark post_tag">{{ . }}</span>
         {{ end }}
+
+        <btn class="btn btn-primary mt-4" onclick="vcard()"><i class="fa fa-address-book" aria-hidden="true"></i> Ajouter à mes contacts</btn>
       
         <h3 class="mt-4">Pour me <b class="contact text-info">contacter</b></h3>
 
@@ -75,9 +77,19 @@
       </div>
     </div>
   </div>
-  <div class="d-none">
-    <div class="linkedin">{{ .Params.linkedin }}</div>
-  </div>
-  {{ partial "script" . }}
+  
+  <!-- vCard -->
+  <script type="text/javascript">
+    function vcard(){
+        console.log("generating the vcard")
+        var fooBar = vCard.create(vCard.Version.FOUR)
+        fooBar.addFormattedname({{ .Title }})
+        fooBar.addEmail({{ .Params.email }}, vCard.Type.WORK)
+        fooBar.addAddress("2 chemin de Treville", "31270", "Frouzins", "France", vCard.Type.WORK)
+        fooBar.addPhone({{ .Params.phone }}, vCard.Type.WORK)
+
+        vCard.export(fooBar, {{ .Title }}, true) // use parameter true to force download
+    }
+  </script>
 </body>
 </html>
