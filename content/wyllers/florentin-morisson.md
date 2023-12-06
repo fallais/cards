@@ -10,4 +10,4 @@ tags: ["recrutement", "commerce", "management"]
 draft: false
 ---
 
-J'aime le diago
+Je peux vous accompagner sur la partie **commerciale** et vous proposer les **compétences de nos experts**, en fonction de vos besoins. Je viens du monde de l'ingénierie mécanique et je suis aujourd'hui **passionné** par l'écosystème Dev, DevOps et Cloud. Pour tout le reste, je vous propose d'en discuter après un **petit match de Padel**, ou directement autour d'un bon **Gin Tonic**.
