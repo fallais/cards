@@ -70,7 +70,8 @@
 
         <h3>Quelques mots sur <b class="text-info">Wyll</b></h3>
         <div class="mt-3">
-          {{ partial "wyll" . }}
+         
+          {{ readFile "/content/wyll.md" | markdownify  }}
         </div>
 
         <h3 class="mt-3"><b class="text-info">Scannez</b> ce QRCode</b></h3>
