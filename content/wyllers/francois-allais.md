@@ -1,7 +1,7 @@
 ---
 title: "François ALLAIS"
 job: "Responsable technique"
-photo: "fallais.jpg"
+photo: "images/wyllers/fallais.jpg"
 date: 2023-08-01
 phone: 0782405519
 email: f.allais@wyll.io

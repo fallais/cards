@@ -4,10 +4,23 @@
   <div class="container">
     <div class="row">
       <div class="col col-lg-6 offset-lg-3 text-center mt-4">
-        <img class="rounded-circle img-fluid mx-auto d-block" width="150" src="/images/wyllers/{{ .Params.photo }}" alt="Photo de {{ .Title }}"/>
+        <!-- Photo de profil -->
+        {{- with .Params.photo -}}
+        {{ $path := . }}
+        {{ $photo := resources.Get $path  }}
+        <h3><img src="{{ $photo.RelPermalink }}" class="rounded-circle img-fluid mx-auto d-block" width="150" alt="Photo de profil" /></h3>
+        {{- end -}}
+
+        <!-- Nom -->
         <h1 class="text-center mt-3 mb-0 text-primary">{{ .Title }}</h1>
+
+        <!-- Poste -->
         <h2 class="text-muted text-center mt-0 mb-0">{{ .Params.job }}</h6>
-        <h3><img src="/images/logo-full.png" width="130" class="img-fluid mt-2 mb-3" /></h3>
+        
+        <!-- Logo de Wyll -->
+        {{ with resources.Get "images/logo-full.png" }}
+        <h3><img src="{{ .RelPermalink }}" width="130" class="img-fluid mt-2 mb-3" alt="Logo de Wyll" /></h3>
+        {{ end }}
         
         {{ range .Params.tags }}
         <span class="badge text-bg-secondary">{{ . }}</span>
@@ -86,13 +99,15 @@
   <script type="text/javascript">
     function vcard(){
         console.log("generating the vcard")
-        var fooBar = vCard.create(vCard.Version.FOUR)
-        fooBar.addFormattedname({{ .Title }})
-        fooBar.addEmail({{ .Params.email }}, vCard.Type.WORK)
-        fooBar.addAddress("2 chemin de Treville", "31270", "Frouzins", "France", vCard.Type.WORK)
-        fooBar.addPhone({{ .Params.phone }}, vCard.Type.WORK)
+        var card = vCard.create(vCard.Version.FOUR)
+        card.addFormattedname("{{ .Title }}")
+        card.addEmail("{{ .Params.email }}", vCard.Type.WORK)
+        card.addAddress("2 chemin de Treville", "31270", "Frouzins", "France", vCard.Type.WORK)
+        card.addPhone("{{ .Params.phone }}", vCard.Type.WORK)
+        card.addRole("{{ .Params.job }}")
+        card.addOrg("Wyll")
 
-        vCard.export(fooBar, {{ .Title }}, true) // use parameter true to force download
+        vCard.export(card, "{{ .Title }}", true) // use parameter true to force download
     }
   </script>
 </body>

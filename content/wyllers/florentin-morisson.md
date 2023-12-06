@@ -1,7 +1,7 @@
 ---
 title: "Florentin MORISSON"
 job: "Responsable d'agence"
-photo: "fmorisson.jpg"
+photo: "images/wyllers/fmorisson.jpg"
 date: 2023-08-01
 phone: 0767877288
 email: f.morisson@wyll.io

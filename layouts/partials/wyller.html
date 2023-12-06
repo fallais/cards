@@ -1,6 +1,12 @@
 <div class="card mb-4">
     <div class="card-body text-center">
-        <img class="rounded-circle img-fluid" width="130" src="/images/wyllers/{{ .Params.photo }}" alt="Photo de {{ .Title }}"/>
+        <!-- Photo de profil -->
+        {{- with .Params.photo -}}
+        {{ $path := . }}
+        {{ $photo := resources.Get $path  }}
+        <img src="{{ $photo.RelPermalink }}" class="rounded-circle img-fluid" width="130" alt="Photo de profil" />
+        {{- end -}}
+
         <h5 class="card-title text-center mt-2"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h5>
         <h6 class="card-subtitle mb-2 text-center text-muted">{{ .Params.job }}</h6>
         {{ range .Params.tags }}
